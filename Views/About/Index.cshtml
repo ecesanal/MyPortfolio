@@ -1,0 +1,92 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Hakkımda</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Hakkımda Listesi</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            Hakkımda ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">Alt Açıklamalar</th>
+                                    <th scope="col">Detaylar</th>
+                                    <th scope="col">Sil</th>
+                                    <th scope="col">Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.AbouthId</td>
+                                        <td>@item.Title</td>
+                                        <td>
+                                            @if (item.SubDescription.Length >= 13)
+                                            {
+                                                @(item.SubDescription.Substring(0, 13)
+                                                    + "...")
+                                            }
+                                            else
+                                            {
+                                                @item.SubDescription
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (item.Detail.Length >= 50)
+                                            {
+                                                @(item.Detail.Substring(0, 50)
+                                                    + "...")
+                                            }
+                                            else
+                                            {
+                                                @item.Detail
+                                            }
+                                        </td>
+                                        <td><a href="/About/DeleteAbout/@item.AbouthId" class="btn btn-danger">Sil</a></td>
+                                        <td>
+                                            <a href="/About/UpdateAbout/@item.AbouthId" class="btn btn-success">Güncelle</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/About/CreateAbout/" class="btn btn-info">Yeni Hakkımda Bilgisi Girişi</a>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

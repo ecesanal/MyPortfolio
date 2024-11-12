@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Dashboard</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Görevler</h4>
+                        <p class="card-category">%80 Tamamlanmış</p>
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center">
+                        <canvas id="taskProgress" width="100" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Dünya Haritası</h4>
+                        <p class="card-category">Dünya genelindeki seçilmiş ülkelerinin dağılımının haritası</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="worldMap" style="height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Circular progress chart for task completion
+    var ctx = document.getElementById('taskProgress').getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [80, 20], // 80% complete
+                backgroundColor: ['#3498db', '#e0e0e0'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            circumference: Math.PI,
+            rotation: Math.PI,
+            cutoutPercentage: 70,
+            tooltips: { enabled: false },
+            plugins: {
+                datalabels: {
+                    formatter: (value, ctx) => {
+                        let sum = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        return percentage;
+                    },
+                    color: '#000',
+                    font: {
+                        weight: 'bold',
+                        size: 16
+                    }
+                }
+            }
+        }
+    });
+
+    var map = L.map('worldMap').setView([20, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    var highlightedCountries = [
+        { country: "United States", coords: [37.0902, -95.7129] },
+        { country: "Russia", coords: [61.5240, 105.3188] },
+        { country: "Australia", coords: [-25.2744, 133.7751] }
+    ];
+    highlightedCountries.forEach(function (country) {
+        L.circle(country.coords, {
+            color: "green",
+            fillColor: "green",
+            fillOpacity: 0.5,
+            radius: 500000
+        }).addTo(map);
+    });
+</script>

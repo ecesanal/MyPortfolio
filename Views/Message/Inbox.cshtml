@@ -37,7 +37,16 @@
 										<td>@item.MessageId</td>
 										<td>@item.NameSurname</td>
 										<td>@item.Subject</td>
-										<td>@item.MessageDetail</td>
+										<td>@if (item.MessageDetail.Length >= 13)
+											{
+												@(item.MessageDetail.Substring(0, 13)
+												+"...")
+											}
+											else
+											{
+												@item.MessageDetail
+											}
+										</td>
 										<td>@item.SendDate.ToShortDateString()</td>
 										<td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-warning">Mesajı Aç</a></td>
 										@if (item.isRead == true)
