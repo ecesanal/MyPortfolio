@@ -1,47 +1,42 @@
-﻿@model List<SocialMedia>
+﻿@model List<Skill>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
-    int count = 0;
 }
-
 <div class="content">
     <div class="container-fluid">
         <div class="row">
-            <h4 class="page-title">Sosyal Medya</h4>
+            <h4 class="page-title">Yetenekler</h4>
             <div class="col-md-12">
                 <div class="card shadow-sm border-0 rounded">
                     <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Sosyal Medya Bilgileri</h5>
+                        <h5 class="mb-0">Yetenek Bilgileri</h5>
                     </div>
                     <div class="card-body">
                         <p class="card-text">
-                            Sosyal Medya ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+                            Yetenek Bilgileri ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
                         </p>
                         <table class="table table-striped mt-3">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Başlık</th>
-                                    <th scope="col">URL</th>
-                                    <th scope="col">İcon</th>
+                                    <th scope="col">Bilgiler</th>
                                     <th scope="col" class="text-center">İşlemler</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    count++;
                                     <tr>
-                                        <td>@count</td>
+                                        <td>@item.SkillId</td>
                                         <td>@item.Title</td>
-                                        <td>@item.Url</td>
-                                        <td>@item.Icon</td>
+                                        <td>@item.Value</td>
                                         <td class="text-center">
-                                            <a href="/SocialMedia/UpdateSocialMedia/@item.SosialMediaId" class="btn btn-outline-success btn-sm ml-2" title="Güncelle">
+                                            <a href="/Skill/UpdateSkill/@item.SkillId" class="btn btn-outline-success btn-sm ml-2" title="Güncelle">
                                                 <i class="fas fa-edit">Güncelle</i>
                                             </a>
-                                            <a href="/SocialMedia/DeleteSocialMedia/@item.SosialMediaId" class="btn btn-outline-danger btn-sm ml-2" title="Sil">
+                                            <a href="/Skill/DeleteSkill/@item.SkillId" class="btn btn-outline-danger btn-sm ml-2" title="Sil">
                                                 <i class="fas fa-edit">Sil</i>
                                             </a>
                                         </td>
@@ -50,17 +45,16 @@
                             </tbody>
                         </table>
                         <div class="text-right">
-                            <a href="/SocialMedia/CreateSocialMedia/" class="btn btn-info btn-lg mt-3">
-                                <i class="fas fa-plus-circle"></i> Yeni Sosyal Medya Girişi
+                            <a href="/Skill/CreateSkill/" class="btn btn-info btn-lg mt-3">
+                                <i class="fas fa-plus-circle"></i> Yeni Yetenek Girişi
                             </a>
                         </div>
                     </div>
 
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 </div>
             </div>
         </div>

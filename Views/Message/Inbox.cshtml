@@ -5,71 +5,88 @@
 }
 
 <div class="content">
-	<div class="container-fluid">
+    <div class="container-fluid">
         <h4 class="page-title">Mesajlar</h4>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-header">
-						<div class="card-title">Gelen Mesajlar Listesi</div>
-					</div>
-					<div class="card-body">
-						<div class="card-sub">
-							Deneyimler ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
-						</div>
-						<table class="table mt-3">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Gönderen</th>
-									<th scope="col">Mesaj Konusu</th>
-									<th scope="col">Mesaj Detayı</th>
-									<th scope="col">Tarih</th>
-									<th scope="col">Mesajı Aç</th>
-									<th scope="col">Mesaj Durumu</th>
-									<th scope="col">Sil</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach (var item in Model)
-								{
-									<tr>
-										<td>@item.MessageId</td>
-										<td>@item.NameSurname</td>
-										<td>@item.Subject</td>
-										<td>@if (item.MessageDetail.Length >= 13)
-											{
-												@(item.MessageDetail.Substring(0, 13)
-												+"...")
-											}
-											else
-											{
-												@item.MessageDetail
-											}
-										</td>
-										<td>@item.SendDate.ToShortDateString()</td>
-										<td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-warning">Mesajı Aç</a></td>
-										@if (item.isRead == true)
-										{
-											<td><a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-primary">Okunmadı Olarak Değiştir</a></td>
-
-										}
-										else
-										{
-											<td><a href="/Message/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info">Okundu Olarak Değiştir</a></td>
-										}
-										<td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a></td>
-									</tr>
-								}
-							</tbody>
-						</table>
-						<br />
-						<br />
-						<br />
-						<br />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow-sm border-0 rounded">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Gelen Mesajlar Listesi</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Mesajlar ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
+                        </p>
+                        <table class="table table-striped mt-3">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gönderen</th>
+                                    <th scope="col">Mesaj Konusu</th>
+                                    <th scope="col">Mesaj Detayı</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Mesajı Aç</th>
+                                    <th scope="col">Mesaj Durumu</th>
+                                    <th scope="col" class="text-center">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MessageId</td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Subject</td>
+                                        <td>
+                                            @if (item.MessageDetail.Length >= 13)
+                                            {
+                                                @(item.MessageDetail.Substring(0, 13) + "...")
+                                            }
+                                            else
+                                            {
+                                                @item.MessageDetail
+                                            }
+                                        </td>
+                                        <td>@item.SendDate.ToShortDateString()</td>
+                                        <td>
+                                            <a href="/Message/MessageDetail/@item.MessageId" class="btn btn-warning btn-sm">
+                                                Mesajı Aç
+                                            </a>
+                                        </td>
+                                        <td>
+                                            @if (item.isRead)
+                                            {
+                                                <a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-primary btn-sm">
+                                                    Okunmadı Olarak Değiştir
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="/Message/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info btn-sm">
+                                                    Okundu Olarak Değiştir
+                                                </a>
+                                            }
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-outline-danger btn-sm" title="Sil">
+                                                <i class="fas fa-trash-alt"></i> Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

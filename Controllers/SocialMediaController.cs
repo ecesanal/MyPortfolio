@@ -24,5 +24,26 @@ namespace MyPortfolio.Controllers
 			context.SaveChanges();
 			return RedirectToAction("Index");
 		}
-	}
+		[HttpGet]
+		public IActionResult UpdateSocialMedia(int id)
+		{
+			var values= context.SocialMedias.Find(id);
+			return View(values);
+		}
+		[HttpPost]
+		public IActionResult UpdateSocialMedia(SocialMedia socialMedia)
+		{
+			context.SocialMedias.Update(socialMedia);
+			context.SaveChanges();
+			return RedirectToAction("Index");
+		}
+        public IActionResult DeleteMessage(int id)
+        {
+            var values = context.SocialMedias.Find(id);
+            context.SocialMedias.Remove(values);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+    }
 }

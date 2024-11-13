@@ -1,253 +1,183 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
 }
 
 <div class="content">
-	<div class="container-fluid">
-		<h4 class="page-title">İstatistikler</h4>
-		<div class="row">
-			<div class="col-md-3">
-				<div class="card card-stats card-warning">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-users"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Mesaj Sayısı</p>
-									<h4 class="card-title">@ViewBag.v1</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-success">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-bar-chart"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Toplam Mesaj Sayısı</p>
-									<h4 class="card-title">@ViewBag.v2</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-danger">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-newspaper-o"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Okunmayan Mesaj Sayısı</p>
-									<h4 class="card-title">@ViewBag.v3</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-primary">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-check-circle"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Okunan Mesaj Sayısı</p>
-									<h4 class="card-title">@ViewBag.v4</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        <br />
-		<div class="row">
-			<div class="col-md-3">
-				<div class="card card-stats card-warning">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-users"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Staj Sayısı</p>
-									<h4 class="card-title">@ViewBag.e1</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-success">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-bar-chart"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">İlk Staj</p>
-									<h4 class="card-title">@ViewBag.e2</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-danger">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-newspaper-o"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">İkinci Staj</p>
-									<h4 class="card-title">@ViewBag.e3</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-primary">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-check-circle"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Son staj</p>
-									<h4 class="card-title">@ViewBag.e4</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-        <br />
-		<div class="row">
-			<div class="col-md-3">
-				<div class="card card-stats card-warning">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-users"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Alınacak Derler</p>
-									<h4 class="card-title">3</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-success">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-bar-chart"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Başarıyla Tamamlanmış Dersler</p>
-									<h4 class="card-title">55</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-danger">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-newspaper-o"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Yarım Kalmış Dersler</p>
-									<h4 class="card-title">2</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="card card-stats card-primary">
-					<div class="card-body ">
-						<div class="row">
-							<div class="col-5">
-								<div class="icon-big text-center">
-									<i class="la la-check-circle"></i>
-								</div>
-							</div>
-							<div class="col-7 d-flex align-items-center">
-								<div class="numbers">
-									<p class="card-category">Toplam Alınmış Dersler</p>
-									<h4 class="card-title">57</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-	</div>
+    <div class="container-fluid">
+        <h4 class="page-title text-center font-weight-bold mb-4">İstatistikler</h4>
+
+        <!-- Section 1: Message Statistics -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-warning text-center flex-shrink-0">
+                            <i class="la la-users"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Mesaj Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v1</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-success text-center flex-shrink-0">
+                            <i class="la la-bar-chart"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Toplam Mesaj Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-danger text-center flex-shrink-0">
+                            <i class="la la-newspaper-o"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Okunmayan Mesaj Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v3</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-primary text-center flex-shrink-0">
+                            <i class="la la-check-circle"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Okunan Mesaj Sayısı</p>
+                            <h4 class="card-title">@ViewBag.v4</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Internship Statistics -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-warning text-center flex-shrink-0">
+                            <i class="la la-users"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Staj Sayısı</p>
+                            <h4 class="card-title">@ViewBag.e1</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-success text-center flex-shrink-0">
+                            <i class="la la-bar-chart"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">İlk Staj</p>
+                            <h4 class="card-title">@ViewBag.e2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-danger text-center flex-shrink-0">
+                            <i class="la la-newspaper-o"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">İkinci Staj</p>
+                            <h4 class="card-title">@ViewBag.e3</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-primary text-center flex-shrink-0">
+                            <i class="la la-check-circle"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Son Staj</p>
+                            <h4 class="card-title">@ViewBag.e4</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Course Statistics -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-warning text-center flex-shrink-0">
+                            <i class="la la-users"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Alınacak Dersler</p>
+                            <h4 class="card-title">3</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-success text-center flex-shrink-0">
+                            <i class="la la-bar-chart"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Başarıyla Tamamlanmış Dersler</p>
+                            <h4 class="card-title">55</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-danger text-center flex-shrink-0">
+                            <i class="la la-newspaper-o"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Yarım Kalmış Dersler</p>
+                            <h4 class="card-title">2</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body d-flex">
+                        <div class="icon-big text-primary text-center flex-shrink-0">
+                            <i class="la la-check-circle"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="card-category mb-1">Toplam Alınmış Dersler</p>
+                            <h4 class="card-title">57</h4>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
 </div>

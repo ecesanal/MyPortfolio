@@ -9,23 +9,22 @@
         <h4 class="page-title">Hakkımda</h4>
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-title">Hakkımda Listesi</div>
+                <div class="card shadow-sm border-0 rounded">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Hakkımda Listesi</h5>
                     </div>
                     <div class="card-body">
-                        <div class="card-sub">
+                        <p class="card-text">
                             Hakkımda ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz.
-                        </div>
-                        <table class="table mt-3">
-                            <thead>
+                        </p>
+                        <table class="table table-striped mt-3">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Başlık</th>
                                     <th scope="col">Alt Açıklamalar</th>
                                     <th scope="col">Detaylar</th>
-                                    <th scope="col">Sil</th>
-                                    <th scope="col">Güncelle</th>
+                                    <th scope="col" class="text-center">İşlemler</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,8 +36,7 @@
                                         <td>
                                             @if (item.SubDescription.Length >= 13)
                                             {
-                                                @(item.SubDescription.Substring(0, 13)
-                                                    + "...")
+                                                @(item.SubDescription.Substring(0, 13) + "...")
                                             }
                                             else
                                             {
@@ -48,30 +46,31 @@
                                         <td>
                                             @if (item.Detail.Length >= 50)
                                             {
-                                                @(item.Detail.Substring(0, 50)
-                                                    + "...")
+                                                @(item.Detail.Substring(0, 50) + "...")
                                             }
                                             else
                                             {
                                                 @item.Detail
                                             }
                                         </td>
-                                        <td><a href="/About/DeleteAbout/@item.AbouthId" class="btn btn-danger">Sil</a></td>
-                                        <td>
-                                            <a href="/About/UpdateAbout/@item.AbouthId" class="btn btn-success">Güncelle</a>
+                                        <td class="text-center">
+                                            <a href="/About/DeleteAbout/@item.AbouthId" class="btn btn-outline-danger btn-sm" title="Sil">
+                                                <i class="fas fa-trash-alt"> Sil</i>
+                                            </a>
+                                            <a href="/About/UpdateAbout/@item.AbouthId" class="btn btn-outline-success btn-sm ml-2" title="Güncelle">
+                                                <i class="fas fa-edit"> Güncelle</i>
+                                            </a>
                                         </td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/About/CreateAbout/" class="btn btn-info">Yeni Hakkımda Bilgisi Girişi</a>
+                        <div class="text-right">
+                            <a href="/About/CreateAbout/" class="btn btn-info btn-lg mt-3">
+                                <i class="fas fa-plus-circle"></i> Yeni Hakkımda Bilgisi Girişi
+                            </a>
+                        </div>
                     </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
                     <br />
                     <br />
                     <br />
@@ -89,4 +88,3 @@
         </div>
     </div>
 </div>
-

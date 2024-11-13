@@ -1,4 +1,5 @@
-﻿
+﻿@model List<MyPortfolio.DAL.Entities.Contact>
+
 <section id="contact" class="s-contact target-section">
 
 	<div class="overlay"></div>
@@ -14,20 +15,20 @@
 
 	<div class="row contact__main">
 		<div class="col-eight tab-full contact__form">
-			<form name="contactForm" id="contactForm" method="post" action="">
+			<form name="contactForm" id="MessageId" method="post" action="">
 				<fieldset>
 
 					<div class="form-field">
-						<input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+						<input name="NameSurname" type="text" id="NameSurname" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
 					</div>
 					<div class="form-field">
-						<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+						<input name="Email" type="email" id="Email" placeholder="Email" value="" required="" aria-required="true" class="full-width">
 					</div>
 					<div class="form-field">
-						<input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+						<input name="Subject" type="text" id="Subject" placeholder="Subject" value="" class="full-width">
 					</div>
 					<div class="form-field">
-						<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+						<textarea name="MessageDetail" id="MessageDetail" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
 					</div>
 					<div class="form-field">
 						<button class="full-width btn--primary">Gönder</button>
@@ -57,19 +58,14 @@
 		</div>
 		<div class="col-four tab-full contact__infos">
 			<h4 class="h06">Phone</h4>
-			<p>
-				Phone: (+90) 542 621 8937<br>
+			<p>@ViewBag.Phone1<br>
 			</p>
 
 			<h4 class="h06">Email</h4>
-			<p>
-				elifecesanal4@gmail.com
-			</p>
+			<p>@ViewBag.Email1</p>
 
 			<h4 class="h06">Address</h4>
-			<p>
-				Kayseri Talas :)
-			</p>
+			<p>@ViewBag.Address</p>
 		</div>
 
 	</div>

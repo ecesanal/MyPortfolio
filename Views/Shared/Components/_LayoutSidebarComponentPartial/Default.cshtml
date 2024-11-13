@@ -67,12 +67,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="tables.html">
-                    <i class="la la-sun-o"></i>
-                    <p>Öne Çıkan Alan</p>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="/Contact/Index/">
                     <i class="la la-whatsapp"></i>
                     <p>İletişim Bilgileri</p>
@@ -85,13 +79,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="icons.html">
+                <a href="/Skill/Index/">
                     <i class="la la-file-code-o"></i>
                     <p>Yeteneklerim</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="icons.html">
+                <a href="/SocialMedia/Index/">
                     <i class="la la-github"></i>
                     <p>Sosyal Medya</p>
                 </a>
@@ -103,15 +97,48 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/Statistic/Index">
+                <a href="/Statistic/Index/">
                     <i class="la la-line-chart"></i>
                     <p>İstatistikler</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="icons.html">
-                    <i class="la la-fonticons"></i>
+                <a href="#" id="logoutButton">
+                    <i class="la la-sign-out"></i>
                     <p>Çıkış Yap</p>
+                </a>
+            </li>
+            <script>
+                document.getElementById('logoutButton').addEventListener('click', function (event) {
+                    event.preventDefault(); // Sayfa yenilenmesini önler
+
+                    fetch('/logout', {
+                        method: 'POST', // Çıkış isteği gönderir
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        credentials: 'include' // Oturum çerezini dahil eder
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                // Çıkış başarılıysa ana sayfaya yönlendirme
+                                window.location.href = '/';
+                                alert('Başarıyla çıkış yapıldı.');
+                            } else {
+                                alert('Çıkış yaparken bir hata oluştu.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Çıkış hatası:', error);
+                            alert('Çıkış yaparken bir hata oluştu.');
+                        });
+                });
+            </script>
+
+            <li class="nav-item">
+                <a href="tables.html">
+                    <i class="la la-sun-o"></i>
+                    <p>Öne Çıkan Alan</p>
                 </a>
             </li>
 
